@@ -22,7 +22,7 @@ function setup() {
   ground = new Ground(0, height - 1, width * 2, 1);
   tower = new Tower(width / 2 - 650, height - 290, 250, 580);
   cannon = new Cannon(width / 2 - 600, height / 2 - 220, 120, 40, angle);
-  cannonBall = new CannonBall(cannon.x, cannon.y);
+  
 
 }
 
@@ -38,7 +38,7 @@ function draw() {
 
   cannon.display();
   tower.display();
-  cannonBall.display()
+  
  
 }
 
@@ -47,8 +47,4 @@ function draw() {
 
 
 
-function keyReleased() {
-  if (keyCode === DOWN_ARROW) {
-    cannonBall.shoot()
-  }
-}
+
