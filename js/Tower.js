@@ -3,7 +3,7 @@ class Tower {
     var options = {
       isStatic: true
     };
-    this.image = loadImage("assets/tower-04.png");
+    this.image = loadImage("assets/tower.png");
     this.width = width;
     this.height = height;
     this.body = Bodies.rectangle(x, y, this.width, this.height, options);
