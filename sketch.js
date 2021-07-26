@@ -15,22 +15,13 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(1200, 600);
+  canvas = createCanvas(1200,600);
   engine = Engine.create();
   world = engine.world;
   angle = -PI / 4;
-
-  var options={
-    isStatic:true
-  }
-
-  ground = Bodies.rectangle(0,590,0,0,options)
-  World.add(world,ground)
-
-  tower = Bodies.rectangle(80,200,0,0,options)
-  World.add(world,tower)
-  
-  cannon = new Cannon(180, 110, 110, 50, angle);
+  ground = new Ground(0, height - 1, width * 2, 1);
+  tower = new Tower(150, 350, 160, 310);
+  cannon = new Cannon(180, 110, 100, 50, angle);
   
 
 }
@@ -39,19 +30,17 @@ function draw() {
   background(189);
   image(backgroundImg, 0, 0, width, height);
 
-  Engine.update(engine);
   
-  rect(ground.position.x,ground.position.y,1200,1);
 
-  image(towerImage,tower.position.x,tower.position.y,160,320)
+  Engine.update(engine);
+  ground.display();
+  
 
   cannon.display();
+  tower.display();
   
+ 
 }
-
-
-
-
 
 
 

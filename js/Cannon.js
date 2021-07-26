@@ -7,7 +7,6 @@ class Cannon {
     this.angle = angle;
   }
   display() {
-    
     fill("#676e6a");
     push();
     translate(this.x, this.y);
